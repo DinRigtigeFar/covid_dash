@@ -10,7 +10,7 @@ from dash.dependencies import Input, Output
 
 from graphFuncs import *
 
-# Nice theme
+# Nice theme is nice
 pio.templates.default = "plotly"
 
 
