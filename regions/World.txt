@@ -1,0 +1,273 @@
+China
+Afghanistan
+Albania
+Alberta
+Algeria
+Andorra
+Angola
+Anguilla
+Anhui
+Antigua and Barbuda
+Argentina
+Armenia
+Aruba
+Australia
+Australian Capital Territory
+Austria
+Azerbaijan
+Bahamas
+Bahrain
+Bangladesh
+Barbados
+Beijing
+Belarus
+Belgium
+Belize
+Benin
+Bermuda
+Bhutan
+Bolivia
+Bonaire, Sint Eustatius and Saba
+Bosnia and Herzegovina
+Botswana
+Brazil
+British Columbia
+British Virgin Islands
+Brunei
+Bulgaria
+Burkina Faso
+Burma
+Burundi
+Cabo Verde
+Cambodia
+Cameroon
+Canada
+Cayman Islands
+Central African Republic
+Chad
+Channel Islands
+Chile
+Chongqing
+Colombia
+Comoros
+Congo (Brazzaville)
+Congo (Kinshasa)
+Costa Rica
+Cote d'Ivoire
+Croatia
+Cuba
+Curacao
+Cyprus
+Czechia
+Denmark
+Diamond Princess
+Djibouti
+Dominica
+Dominican Republic
+Ecuador
+Egypt
+El Salvador
+Equatorial Guinea
+Eritrea
+Estonia
+Eswatini
+Ethiopia
+Falkland Islands (Malvinas)
+Faroe Islands
+Fiji
+Finland
+France
+French Guiana
+French Polynesia
+Fujian
+Gabon
+Gambia
+Gansu
+Georgia
+Germany
+Ghana
+Gibraltar
+Grand Princess
+Greece
+Greenland
+Grenada
+Guadeloupe
+Guangdong
+Guangxi
+Guatemala
+Guinea
+Guinea-Bissau
+Guizhou
+Guyana
+Hainan
+Haiti
+Hebei
+Heilongjiang
+Henan
+Holy See
+Honduras
+Hong Kong
+Hubei
+Hunan
+Hungary
+Iceland
+India
+Indonesia
+Inner Mongolia
+Iran
+Iraq
+Ireland
+Isle of Man
+Israel
+Italy
+Jamaica
+Japan
+Jiangsu
+Jiangxi
+Jilin
+Jordan
+Kazakhstan
+Kenya
+Korea, South
+Kosovo
+Kuwait
+Kyrgyzstan
+Laos
+Latvia
+Lebanon
+Lesotho
+Liaoning
+Liberia
+Libya
+Liechtenstein
+Lithuania
+Luxembourg
+MS Zaandam
+Macau
+Madagascar
+Malawi
+Malaysia
+Maldives
+Mali
+Malta
+Manitoba
+Marshall Islands
+Martinique
+Mauritania
+Mauritius
+Mayotte
+Mexico
+Moldova
+Monaco
+Mongolia
+Montenegro
+Montserrat
+Morocco
+Mozambique
+Namibia
+Nepal
+Netherlands
+New Brunswick
+New Caledonia
+New South Wales
+New Zealand
+Newfoundland and Labrador
+Nicaragua
+Niger
+Nigeria
+Ningxia
+North Macedonia
+Northern Territory
+Northwest Territories
+Norway
+Nova Scotia
+Nunavut
+Oman
+Ontario
+Pakistan
+Panama
+Papua New Guinea
+Paraguay
+Peru
+Philippines
+Poland
+Portugal
+Prince Edward Island
+Qatar
+Qinghai
+Quebec
+Queensland
+Reunion
+Romania
+Russia
+Rwanda
+Saint Barthelemy
+Saint Kitts and Nevis
+Saint Lucia
+Saint Pierre and Miquelon
+Saint Vincent and the Grenadines
+Samoa
+San Marino
+Sao Tome and Principe
+Saskatchewan
+Saudi Arabia
+Senegal
+Serbia
+Seychelles
+Shaanxi
+Shandong
+Shanghai
+Shanxi
+Sichuan
+Sierra Leone
+Singapore
+Sint Maarten
+Slovakia
+Slovenia
+Solomon Islands
+Somalia
+South Africa
+South Australia
+South Sudan
+Spain
+Sri Lanka
+St Martin
+Sudan
+Suriname
+Sweden
+Switzerland
+Syria
+Taiwan*
+Tajikistan
+Tanzania
+Tasmania
+Thailand
+Tianjin
+Tibet
+Timor-Leste
+Togo
+Trinidad and Tobago
+Tunisia
+Turkey
+Turks and Caicos Islands
+US
+Uganda
+Ukraine
+United Arab Emirates
+United Kingdom
+Uruguay
+Uzbekistan
+Vanuatu
+Venezuela
+Victoria
+Vietnam
+Wallis and Futuna
+West Bank and Gaza
+Western Australia
+Xinjiang
+Yemen
+Yukon
+Yunnan
+Zambia
+Zhejiang
+Zimbabwe
