@@ -1,0 +1,11 @@
+name: Dash
+channels:
+  - defaults
+dependencies:
+  - dash
+  - python=3.9
+  - plotly
+  - pandas
+  - jupyter-dash
+  - dash-bootstrap-components
+prefix: /opt/miniconda3/envs/Dash
