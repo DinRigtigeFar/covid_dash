@@ -17,9 +17,9 @@ pio.templates.default = "plotly"
 # external CSS stylesheets
 external_stylesheets = [dbc.themes.BOOTSTRAP]
 
-deaths = pd.read_csv("/Users/christian/Documents/Dev/Pystuff/covid_viz/time_series_covid19_deaths_global.csv")
-cases = pd.read_csv("/Users/christian/Documents/Dev/Pystuff/covid_viz/time_series_covid19_confirmed_global.csv")
-popsizes = pd.read_csv('/Users/christian/Documents/Dev/Pystuff/covid_viz/COVID-19/csse_covid_19_data/UID_ISO_FIPS_LookUp_Table.csv')
+deaths = pd.read_csv("../COVID-19/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv")
+cases = pd.read_csv("../COVID-19/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv")
+popsizes = pd.read_csv('../COVID-19/csse_covid_19_data/UID_ISO_FIPS_LookUp_Table.csv')
 
 # If province_state has a value, make that value the country_region instead
 popsizes.loc[popsizes['Province_State'].isnull()==False, ['Country_Region']] = popsizes['Province_State']
