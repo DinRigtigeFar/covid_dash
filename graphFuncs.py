@@ -6,7 +6,9 @@ import plotly.graph_objs as go
 colorscheme = px.colors.cyclical.IceFire
 colorscheme += px.colors.diverging.Portland
 
-def base_graph(dataframe, dict_of_countries_and_popsize, scale=1, dtd=True):
+mapbox_access_token = environ['MAPBOX_KEY']
+
+def base_graph(dataframe, dict_of_countries_and_popsize, scale=1, dtd=True, death=False):
 	"""
 	Function that returns a plotly graph object with the option of scaling it
 	"""
@@ -59,20 +61,37 @@ def base_graph(dataframe, dict_of_countries_and_popsize, scale=1, dtd=True):
 		except Exception as e:
 			print(f'Failed due to error: {e}')
 	if scale != 1:
-		layout = {
-					"title": f"COVID-19 cases per {int(scale/1000)}K capita per country",'xaxis_title':"Date",
-					'yaxis_title':"Cases of COVID-19 scaled"}
-		if dtd:
-			layout_dtd = {
-						"title": f"New COVID-19 cases per day per {int(scale/1000)}K capita",'xaxis_title':"Date",
-					'yaxis_title':"Cases of COVID-19 scaled"}
+		if not death:
+			layout = {
+						"title": f"COVID-19 cases per {int(scale/1000)}K capita per country",'xaxis_title':"Date",
+						'yaxis_title':"Cases of COVID-19 scaled"}
+			if dtd:
+				layout_dtd = {
+							"title": f"New COVID-19 cases per day per {int(scale/1000)}K capita",'xaxis_title':"Date",
+						'yaxis_title':"Cases of COVID-19 scaled"}
+		else:
+			layout = {
+						"title": f"COVID-19 deaths per {int(scale/1000)}K capita per country",'xaxis_title':"Date",
+						'yaxis_title':"Deaths of COVID-19 scaled"}
+			if dtd:
+				layout_dtd = {
+							"title": f"New COVID-19 deaths per day per {int(scale/1000)}K capita",'xaxis_title':"Date",
+						'yaxis_title':"Deaths of COVID-19 scaled"}
 	else:
-		layout = {"title": "COVID-19 cases per country",'xaxis_title':"Date",
-					'yaxis_title':"Cases of COVID-19"}
-		if dtd:
-			layout_dtd = {
-						"title": "New COVID-19 cases per day per country",'xaxis_title':"Date",
-					'yaxis_title':"Cases of COVID-19"}
+		if not death:
+			layout = {"title": "COVID-19 cases per country",'xaxis_title':"Date",
+						'yaxis_title':"Cases of COVID-19"}
+			if dtd:
+				layout_dtd = {
+							"title": "New COVID-19 cases per day per country",'xaxis_title':"Date",
+						'yaxis_title':"Cases of COVID-19"}
+		else:
+			layout = {"title": "COVID-19 deaths per country",'xaxis_title':"Date",
+						'yaxis_title':"Deaths of COVID-19"}
+			if dtd:
+				layout_dtd = {
+							"title": "New COVID-19 deaths per day per country",'xaxis_title':"Date",
+						'yaxis_title':"Deaths of COVID-19"}
 	fig = go.Figure(data=plots, layout=layout)
 	fig.update_xaxes(tickangle=30, title_font=dict(size=16), nticks=20)
 	fig
@@ -124,7 +143,7 @@ def map_graph(dataframe, dict_of_countries_and_popsize, scale):
 	Function that returns a map of the inpput
 	"""
 
-	mapbox_access_token = environ['MAPBOX_KEY']
+	
 	lat = []
 	lon = []
 	total_infected = []
@@ -137,7 +156,6 @@ def map_graph(dataframe, dict_of_countries_and_popsize, scale):
 		total_infected.append(dataframe[dataframe["Country/Region"] == i].iloc[0])
 	
 	y = [case.iloc[-1] for case in total_infected]
-
 	if scale != 1:
 		if len(y) == 273:
 			pre_size = [k/(i/scale) if k/(i/scale)>=1 else 1 for k,i in zip(y, dict_of_countries_and_popsize.values())]
@@ -159,6 +177,7 @@ def map_graph(dataframe, dict_of_countries_and_popsize, scale):
         marker=go.scattermapbox.Marker(
             size=sizes
         ),
+		
         text=[i for i in dict_of_countries_and_popsize.keys()],
 		hovertext=[f'Infected in {c}: {i}' for i,c in zip(y,dict_of_countries_and_popsize.keys())]
     ))
@@ -177,6 +196,51 @@ def map_graph(dataframe, dict_of_countries_and_popsize, scale):
 			pitch=0,
 			zoom=1.8
 		),
+		title='COVID-19 cases by country'
 	)
 
 	return fig
+
+
+def animation_map(dataframe_melted):
+	"""
+	Function that illustrates the development of COVID-19 on a worldwide scale
+	"""
+
+	fig = px.scatter_mapbox(
+		data_frame=dataframe_melted,
+        lat='Lat',
+        lon='Long',
+        color='Cumulative_Cases',
+		animation_frame='Date',
+		animation_group='Country/Region',
+        size='Cumulative_Cases',
+		size_max=100,
+		hover_name='Country/Region',
+		hover_data={'Date':True, 'Cumulative_Cases':True, 'Lat':False, 'Long':False},
+    )
+	fig.update_layout(
+		autosize=True,
+		hovermode='closest',
+		height=1200,
+		mapbox=dict(
+			accesstoken=mapbox_access_token,
+			bearing=0,
+			center=dict(
+				lat=28,
+				lon=20
+			),
+			pitch=0,
+			zoom=1.8
+		),
+		title='Development of the COVID-19 pandemic',
+		transition = {'duration': 500},
+	)
+	fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 500
+	fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["redraw"] = True
+
+	return fig
+
+
+
+	
