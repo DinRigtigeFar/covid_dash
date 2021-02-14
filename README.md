@@ -30,6 +30,6 @@ conda activate Dash
 ````
 ### Run the app
 ````
-python dash_app.py
+python index.py
 ````
 Now that the app is running all you need is to open it in your [browser](http://127.0.0.1:8050/) (it may take a few seconds to spin up)!
