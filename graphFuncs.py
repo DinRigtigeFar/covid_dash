@@ -272,7 +272,7 @@ def animation_us_map(dataframe_melted):
 			pitch=0,
 			zoom=4
 		),
-		title='Development of the COVID-19 pandemic',
+		title='Development of the COVID-19 pandemic in the US',
 		transition = {'duration': 500},
 	)
 	fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 500
