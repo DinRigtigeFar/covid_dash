@@ -202,7 +202,7 @@ def map_graph(dataframe, dict_of_countries_and_popsize, scale):
 	return fig
 
 
-def animation_map(dataframe_melted):
+def animation_world_map(dataframe_melted):
 	"""
 	Function that illustrates the development of COVID-19 on a worldwide scale
 	"""
@@ -241,6 +241,43 @@ def animation_map(dataframe_melted):
 
 	return fig
 
+def animation_us_map(dataframe_melted):
+	"""
+	Function that illustrates the development of COVID-19 in the US alone
+	"""
 
+	fig = px.scatter_mapbox(
+		data_frame=dataframe_melted,
+        lat='Lat',
+        lon='Long_',
+        color='Cumulative_Cases',
+		animation_frame='Date',
+		animation_group='Admin2',
+        size='Cumulative_Cases',
+		size_max=100,
+		hover_name='Admin2',
+		hover_data={'Date':True, 'Cumulative_Cases':True, 'Lat':False, 'Long_':False},
+    )
+	fig.update_layout(
+		autosize=True,
+		hovermode='closest',
+		height=1200,
+		mapbox=dict(
+			accesstoken=mapbox_access_token,
+			bearing=0,
+			center=dict(
+				lat=38,
+				lon=-97
+			),
+			pitch=0,
+			zoom=4
+		),
+		title='Development of the COVID-19 pandemic',
+		transition = {'duration': 500},
+	)
+	fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 500
+	fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["redraw"] = True
+
+	return fig
 
 	
