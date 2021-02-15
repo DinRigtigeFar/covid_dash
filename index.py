@@ -15,8 +15,10 @@ app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
     html.Div([
         dbc.Row([
-		dbc.Col(dcc.Link('World', href='/apps/dash_app')),
-        dbc.Col(dcc.Link('US', href='/apps/us_only')),
+		dbc.Col(dcc.Link(html.H3('World'), href='/apps/dash_app'),
+			width={'size':1, 'offset':5}),
+        dbc.Col(dcc.Link(html.H3('US'), href='/apps/us_only'),
+			width={'size':1}),
     ])]),
     html.Div(id='page-content', children=[])
 ])
@@ -34,4 +36,4 @@ def display_page(pathname):
 
 
 if __name__ == '__main__':
-    app.run_server(debug=False)
+    app.run_server(debug=True)

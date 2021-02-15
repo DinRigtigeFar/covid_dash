@@ -11,7 +11,7 @@ external_stylesheets = [dbc.themes.BOOTSTRAP]
 
 title = 'COVID-19 app'
 layout = html.Div(children=[
-	html.H1('COVID-19 dash app'),
+	dbc.Row([dbc.Col(html.H1('COVID-19 tracker'),width={'size':'auto', 'offset':5})]),
 	html.Br(),
 	dbc.Col(dcc.Graph(id="animation_world_map", figure=ani_map)
 	),
@@ -29,7 +29,8 @@ layout = html.Div(children=[
 			),
 			width={'size':6, 'offset':3}
 		),
-		dbc.Col(html.Br()),
+		dbc.Col(html.Br())]),
+	dbc.Row([
 		dbc.Col(html.H5('Select entire regions'), width={'size':'auto', 'offset':5}),
 		dbc.Col(
 			dcc.Dropdown(
@@ -42,6 +43,7 @@ layout = html.Div(children=[
 			),
 			width={'size':6, 'offset':3}
 		),
+		dbc.Col(html.H5('Select options:'), width={'size':'auto', 'offset':3}),
 		dbc.Col(
 			dcc.Checklist(
     			options=[
@@ -53,7 +55,7 @@ layout = html.Div(children=[
     			labelStyle={'display': 'inline'},
 				inputStyle={"margin": "0 5px 0 20px"}
 			),
-			width={'size':'auto', 'offset':3})
+			width={'size':'auto', 'offset':0})
 	]),
 	html.Br(),
 	html.Div(dbc.Row([
