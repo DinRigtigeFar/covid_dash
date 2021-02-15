@@ -22,6 +22,7 @@ cd covid-19_dash
 ### Download app:
 ````
 git clone https://github.com/DinRigtigeFar/covid_dash.git
+cd covid_dash
 ````
 ### Create the necessary environment and activate it:
 ````
