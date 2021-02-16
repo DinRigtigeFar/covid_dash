@@ -90,8 +90,8 @@ melt_us_cases = melt_us_cases.set_index(['Date'])
 
 melt_us_cases.index = pd.to_datetime(melt_us_cases.index)
 
-downsample = melt_us_cases.groupby(['Province_State','Admin2']).resample('W', origin='start').mean()
-melt_us_cases = downsample.reset_index()
+downsample_us = melt_us_cases.groupby(['Province_State','Admin2']).resample('W', origin='start').mean()
+melt_us_cases = downsample_us.reset_index()
 melt_us_cases['Date'] = melt_us_cases['Date'].astype(str)
 
 # Make a static animation map
