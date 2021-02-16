@@ -1,5 +1,6 @@
 # COVID-19 Dash app
 ## Explore the current pandemic through data.
+### Now a very small snippet is available on [Heroku](https://covid-19-dashapp.herokuapp.com/apps/dash_app)!
 
 ### Worldwide development of COVID-19
 The app contains the ability to lookup individual countries, multiple countries of your liking or entire continents at a time. The countries chosen will be presented in various graphs including a pie chart, scatter plots and a map. You also have the ability to scale the output to cases/deaths per 100K capita.<br>
