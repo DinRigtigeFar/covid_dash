@@ -13,12 +13,6 @@ In the latest commit I made the app multipage with an US only map option.
 * The token can be aquired from [mapbox](https://www.mapbox.com) after signing up (free).
 
 ## Installation
-
-### Create a place for the app:
-````
-mkdir covid-19_dash
-cd covid-19_dash
-````
 ### Download app:
 ````
 git clone https://github.com/DinRigtigeFar/covid_dash.git
