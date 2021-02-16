@@ -6,21 +6,16 @@ The app contains the ability to lookup individual countries, multiple countries 
 Below is a gif of the animated world map.
 ![Showcase animated map](demo/demo.gif)
 
+In the latest commit I made the app multipage with an US only map option.
+
 ## Prerequisites
 * A mapbox token saved as an enviroment variable so it will heed the call of: `environ['MAPBOX_KEY']`.
 * The token can be aquired from [mapbox](https://www.mapbox.com) after signing up (free).
 
 ## Installation
-
-### Create a place for the app:
-````
-mkdir covid-19_dash
-cd covid-19_dash
-````
-### Download app and data:
+### Download app:
 ````
 git clone https://github.com/DinRigtigeFar/covid_dash.git
-git clone https://github.com/CSSEGISandData/COVID-19.git
 ````
 ### Create the necessary environment and activate it:
 ````
@@ -29,6 +24,6 @@ conda activate Dash
 ````
 ### Run the app
 ````
-python dash_app.py
+python index.py
 ````
 Now that the app is running all you need is to open it in your [browser](http://127.0.0.1:8050/) (it may take a few seconds to spin up)!
