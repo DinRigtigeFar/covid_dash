@@ -20,6 +20,7 @@ git clone https://github.com/DinRigtigeFar/covid_dash.git
 ````
 ### Create the necessary environment and activate it:
 ````
+cd covid_dash
 conda env create -f environment.yml
 conda activate Dash
 ````
